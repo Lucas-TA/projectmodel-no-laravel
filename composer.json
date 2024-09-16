@@ -1,0 +1,20 @@
+{
+    "name": "lascenca/projectmodel-no-laravel",
+    "authors": [
+        {
+            "name": "Lucas-TA",
+            "email": "dev.ascencao@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [
+            "application/helpers/constants.php",
+            "application/router/router.php",
+            "application/core/controller.php"
+        ],
+        "psr-4": {
+            "application\\": "application"
+        }
+    }
+}
