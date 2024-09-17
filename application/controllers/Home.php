@@ -6,11 +6,14 @@ class Home
 {
     public function index($parts): array
     {
+        $users = fetchAll('users');
         return [
           'view' => 'home.php',
             'data' => [
                 'name' => 'Lucas',
-                'title' => 'Home'
+                'title' => 'Home',
+                'users' => $users
+
             ]
         ];
     }

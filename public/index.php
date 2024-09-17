@@ -9,6 +9,9 @@ try {
     if (!isset($data['data'])) {
         throw new Exception("The indice data is missing");
     }
+    if (!isset($data['data']['title'])) {
+        throw new Exception("The indice title data is missing");
+    }
 
     if (!isset($data['view'])) {
         throw new Exception("View is not defined");

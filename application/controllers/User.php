@@ -5,7 +5,11 @@ class User
 {
     public function show($parts)
     {
-        var_dump('Show');
+        if (!isset($parts['user'])) {
+            return redirect('/');
+        }
+        $user = findBy('users', 'id', $parts['user']);
+        var_dump($user);
         die();
     }
     public function create()

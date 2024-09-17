@@ -6,12 +6,17 @@
             "email": "dev.ascencao@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+      "ext-pdo": "*"
+    },
     "autoload": {
         "files": [
             "application/helpers/constants.php",
             "application/router/router.php",
-            "application/core/controller.php"
+            "application/core/controller.php",
+            "application/database/connect.php",
+            "application/database/fetch.php",
+            "application/helpers/redirect.php"
         ],
         "psr-4": {
             "application\\": "application"
