@@ -16,5 +16,10 @@ function loadController($matchedUri, $parts)
         throw new Exception("Method $method does not exists.");
     }
 
-    return $controllerInstance->$method($parts);
+    $controller = $controllerInstance->$method($parts);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        die();
+    }
+    return $controller;
 }

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/assets/css/styles.css">
     </head>
     <body>
-        <div class="header container menu_list">
+        <div class="header container">
             <?php require 'partials/header.php' ?>
         </div>
         <div class="container users-box">

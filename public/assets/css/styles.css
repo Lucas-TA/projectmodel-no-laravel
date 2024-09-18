@@ -5,6 +5,7 @@
 }
 html, body {
     height: 100%;
+    font-family: sans-serif;
 }
 h2 {
     text-align: center;
@@ -22,10 +23,11 @@ h2 {
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 .menu_list {
     display: flex;
+    flex-direction: row;
     gap: 20px;
 }
 .menu_list li {
@@ -51,24 +53,40 @@ h2 {
 .box-login {
     margin: 0 auto;
     padding: 5px;
-    width: 400px;
+    max-width: 400px;
     text-align: left;
 
-    display: flex;
-    flex-direction: column;
+
     gap: 10px;
 }
 .box-login fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
     width: 100%;
     text-align: left;
+    border: none;
 }
 .box-login input {
     width: 100%;
 }
-button {
-    width: 50%;
+.btn {
+    width: 100px;
     height: 30px;
     margin: 0 auto;
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: #97f6ad;
+    box-shadow: 2px 2px 4px #000;
+
+    cursor: pointer;
+
+    font-weight: bold;
+    text-transform: uppercase;
 }
 input {
     height: 30px;

@@ -16,7 +16,9 @@
             "application/core/controller.php",
             "application/database/connect.php",
             "application/database/fetch.php",
-            "application/helpers/redirect.php"
+            "application/helpers/redirect.php",
+            "application/helpers/flash.php",
+            "application/helpers/sessions.php"
         ],
         "psr-4": {
             "application\\": "application"

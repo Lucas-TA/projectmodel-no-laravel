@@ -61,11 +61,13 @@ function router()
 {
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $routes = require 'routes.php';
-    $matchedUri = getMatchedStaticUri($uri, $routes);
+    $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+    $matchedUri = getMatchedStaticUri($uri, $routes[$requestMethod]);
 
     $parts = [];
     if (empty($matchedUri)) {
-        $matchedUri = validateRegexDynamicUri($uri, $routes);
+        $matchedUri = validateRegexDynamicUri($uri, $routes[$requestMethod]);
         $uri = explode('/', ltrim($uri, '/'));
         $parts = getDynamicUriParts($uri, $matchedUri);
         $parts = formatDynamicUriParts($uri, $parts);
