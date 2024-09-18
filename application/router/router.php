@@ -2,11 +2,6 @@
 
 use JetBrains\PhpStorm\NoReturn;
 
-function routes():array
-{
-   return require 'routes.php';
-}
-
 /**
  * Return static URI from routes.php
  * @param $uri
@@ -15,10 +10,7 @@ function routes():array
  */
 function getMatchedStaticUri($uri, $routes):array
 {
-    if (array_key_exists($uri, $routes)) {
-        return [$uri => $routes[$uri]];
-    }
-    return [];
+    return (array_key_exists($uri, $routes)) ? [$uri => $routes[$uri]] : [];
 }
 
 /**
@@ -68,7 +60,7 @@ function formatDynamicUriParts($uri, $parts):array
 function router()
 {
     $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $routes = routes();
+    $routes = require 'routes.php';
     $matchedUri = getMatchedStaticUri($uri, $routes);
 
     $parts = [];
