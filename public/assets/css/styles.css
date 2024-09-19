@@ -53,7 +53,7 @@ h2 {
 .box-login {
     margin: 0 auto;
     padding: 5px;
-    max-width: 400px;
+    max-width: 95%;
     text-align: left;
 
 
@@ -88,21 +88,17 @@ h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
+.btn-red {
+    background-color: #f46a6a;
+}
 input {
     height: 30px;
-}
-.box-register
-{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-self: center;
 }
 .box-name-and-last-name {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 10px;
     width: 100%;
 }
 .box-name-and-last-name > div {

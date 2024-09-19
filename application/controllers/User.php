@@ -12,8 +12,27 @@ class User
         var_dump($user);
         die();
     }
-    public function create()
+    public function create(): array
     {
-        var_dump('create');
+        return [
+            'view' => 'create.php',
+            'data' => [
+                'title' => 'Create Account'
+            ]
+        ];
+    }
+    public function store()
+    {
+        $validate = validate([
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'email|unique',
+            'password' => 'required|maxlen:10'
+        ]);
+
+        if (!$validate)
+        {
+            return redirect('/user/create');
+        }
     }
 }

@@ -1,12 +1,13 @@
 <?php
 return [
     'POST' => [
-        '/login' => 'Login@store'
+        '/login' => 'Login@store',
+        '/user/store' => 'User@store',
     ],
     'GET' => [
         '/' => 'Home@index',
         '/login' => 'Login@index',
-        '/user/register' => 'User@register',
+        '/user/create' => 'User@create',
         '/user/[0-9]+'=> 'User@show',
         '/logout' => 'Login@destroy',
     ]
