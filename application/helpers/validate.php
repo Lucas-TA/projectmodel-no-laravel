@@ -14,12 +14,12 @@ function validate(array $validations): false|array
             $result[$field] = $validation($field, $part);
         } else {
             $explodedPipeFromValidation = explode('|', $validation);
-            foreach ($explodedPipeFromValidation as $validationWithoutPipe) {
-                if (str_contains($validationWithoutPipe, ':'))
+            foreach ($explodedPipeFromValidation as $validation) {
+                if (str_contains($validation, ':'))
                 {
-                    [$validationWithoutPipe, $part] = explode(':', $validationWithoutPipe);
+                    [$validation, $part] = explode(':', $validation);
                 }
-                $result[$field] = $validationWithoutPipe($field, $part);
+                $result[$field] = $validation($field, $part);
             }
         }
     }
@@ -52,14 +52,22 @@ function email($field)
 
 function unique($field, $part)
 {
+    if (empty($part)) {
+        var_dump('erro sem part');
+        die();
+    }
     $data = filter_input(INPUT_POST, $field, FILTER_UNSAFE_RAW);
     $user = findBy($part, $field, $data);
+
 
     if ($user) {
         setFlash($field, 'This field is already in use.');
         return false;
     }
+    setFlash($field, 'Deu certo');
     return $data;
+//    var_dump($user);
+//    die();
 }
 function maxLen()
 {
