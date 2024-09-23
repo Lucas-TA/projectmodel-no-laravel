@@ -10,10 +10,8 @@ class Home
         return [
           'view' => 'home.php',
             'data' => [
-                'name' => 'Lucas',
                 'title' => 'Home',
                 'users' => $users
-
             ]
         ];
     }

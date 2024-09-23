@@ -9,14 +9,18 @@
  */
 function multipleValidations(string $validation, string $field, string $part): string
 {
-    $result = '';
     $explodedPipeFromValidation = explode('|', $validation);
+    $result = [];
     foreach ($explodedPipeFromValidation as $validation) {
         if (str_contains($validation, ':'))
         {
             [$validation, $part] = explode(':', $validation);
         }
-        $result = $validation($field, $part);
+        $result[$field] = $validation($field, $part);
+
+        if (isset($result[$field]) and $result[$field] === false) {
+            break;
+        }
     }
-    return $result;
+    return $result[$field];
 }
