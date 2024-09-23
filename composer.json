@@ -16,6 +16,7 @@
             "application/core/controller.php",
             "application/database/connect.php",
             "application/database/fetch.php",
+            "application/database/create.php",
             "application/helpers/redirect.php",
             "application/helpers/flash.php",
             "application/helpers/sessions.php",

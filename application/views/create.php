@@ -1,4 +1,6 @@
 <h2>Create</h2>
+
+<?php echo getFlash('message'); ?>
 <form action="/user/store" method="POST" class="box-login">
     <fieldset>
         <div class="box-name-and-last-name">

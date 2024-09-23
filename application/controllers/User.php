@@ -34,7 +34,14 @@ class User
         {
             return redirect('/user/create');
         }
-        var_dump($validate);
-        die();
+        $validate['password'] = password_hash($validate['password'], PASSWORD_DEFAULT);
+
+        $created = create('users', $validate);
+
+        if (!$created) {
+            setFlash('error', 'There was an error creating the user. Try again in a few minutes.');
+            return redirect('/user/create');
+        }
+        return redirect('/');
     }
 }
