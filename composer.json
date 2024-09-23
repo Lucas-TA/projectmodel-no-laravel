@@ -19,7 +19,13 @@
             "application/helpers/redirect.php",
             "application/helpers/flash.php",
             "application/helpers/sessions.php",
-            "application/helpers/validate.php"
+            "application/helpers/validate.php",
+            "application/helpers/validations/email.php",
+            "application/helpers/validations/maxlen.php",
+            "application/helpers/validations/required.php",
+            "application/helpers/validations/single-validation.php",
+            "application/helpers/validations/multiple-validations.php",
+            "application/helpers/validations/unique.php"
         ],
         "psr-4": {
             "application\\": "application"
