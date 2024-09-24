@@ -7,7 +7,7 @@ class Login
     {
         $users = fetchAll('users');
         return [
-            'view' => 'login.php',
+            'view' => 'login',
             'data' => [
                 'title' => 'Login',
             ]

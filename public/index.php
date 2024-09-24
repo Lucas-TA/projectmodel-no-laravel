@@ -4,8 +4,6 @@ require 'bootstrap.php';
 try {
     $data = router();
 
-    extract($data['data']);
-
     if (!isset($data['data'])) {
         throw new Exception("The indice data is missing");
     }
@@ -16,13 +14,21 @@ try {
     if (!isset($data['view'])) {
         throw new Exception("View is not defined");
     }
-    if (!file_exists(VIEWS . $data['view'])) {
+    if (!file_exists(VIEWS . $data['view'].'.php')) {
         throw new Exception("View {$data['view']} does not exist");
     }
 
-    $view = $data['view'];
+    // Create new Plates instance
+    $templates = new League\Plates\Engine(VIEWS);
 
-    require VIEWS . 'default.php';
+    // Render a template
+    echo $templates->render($data['view'], $data['data']);
+
+//    extract($data['data']);
+//
+//    $view = $data['view'];
+//
+//    require VIEWS . 'default.php';
 } catch (Exception $e) {
     var_dump($e->getMessage());
 }

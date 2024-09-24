@@ -1,3 +1,4 @@
+<?php $this->layout('default', ['title' => $title]) ?>
 <h2>Create</h2>
 
 <?php echo getFlash('message'); ?>

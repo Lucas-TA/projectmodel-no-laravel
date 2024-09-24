@@ -15,13 +15,13 @@ class User
     public function create(): array
     {
         return [
-            'view' => 'create.php',
+            'view' => 'create',
             'data' => [
                 'title' => 'Create Account'
             ]
         ];
     }
-    public function store()
+    public function store(): null
     {
         $validate = validate([
             'firstName' => 'required',

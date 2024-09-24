@@ -1,7 +1,15 @@
 <?php
-function create($table, $data)
+/**
+ * @throws Exception
+ */
+function create(string $table, array $data)
 {
     try {
+
+        if (array_is_list($data)) {
+            throw new Exception("data must be an associative array");
+        }
+
         //insert into users(firstName, lastName, email, password)
         //values(:firstName, :lastName, :email, :password)
         $connect = connect();
