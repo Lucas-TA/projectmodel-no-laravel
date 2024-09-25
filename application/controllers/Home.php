@@ -2,6 +2,8 @@
 
 namespace application\controllers;
 
+use JetBrains\PhpStorm\NoReturn;
+
 class Home
 {
     public function index($parts): array
