@@ -14,5 +14,6 @@
         <div class="container users-box">
             <?=$this->section('content')?>
         </div>
+        <?=$this->section('scripts')?>
     </body>
 </html>
