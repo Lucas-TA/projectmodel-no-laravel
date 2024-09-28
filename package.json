@@ -1,0 +1,28 @@
+{
+  "name": "projectmodel-no-laravel",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress --watch",
+    "prod": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.25.2",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.25.4",
+    "babel-loader": "^8.4.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.7.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.1",
+    "axios": "^1.7.7"
+  }
+}
