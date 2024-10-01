@@ -17653,7 +17653,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var axiosConfig = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
   headers: {
-    'Content-type': 'application/json',
+    'Content-Type': 'application/json',
     HTTP_X_REQUESTED_WITH: 'XMLHttpRequest'
   },
   baseURL: 'http://localhost:8080'
@@ -17688,7 +17688,7 @@ function _users() {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return _http__WEBPACK_IMPORTED_MODULE_0__["default"].get('/user');
+          return _http__WEBPACK_IMPORTED_MODULE_0__["default"].get('/users');
         case 3:
           _yield$http$get = _context.sent;
           data = _yield$http$get.data;
