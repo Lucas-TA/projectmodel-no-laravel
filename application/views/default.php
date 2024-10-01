@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php $title = 'Site';
-            echo $this->e($title); ?></title>
+        <title><?php echo $this->e($title); ?></title>
         <link rel="stylesheet" href="/assets/css/styles.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
     </head>
     <body>
         <div class="header container">
@@ -14,5 +14,7 @@
         <div class="container users-box">
             <?=$this->section('content')?>
         </div>
+        <script src="app.js"></script>
+        <?=$this->section('scripts')?>
     </body>
 </html>

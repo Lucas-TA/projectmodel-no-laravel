@@ -20,6 +20,7 @@
             "application/database/create.php",
             "application/database/update.php",
             "application/database/delete.php",
+            "application/helpers/helpers.php",
             "application/helpers/redirect.php",
             "application/helpers/flash.php",
             "application/helpers/sessions.php",

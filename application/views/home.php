@@ -6,3 +6,4 @@
         <li><?php echo $user->firstName ?> | <a href="/user/<?php echo $user->id; ?>">Details</a> </li>
     <?php endforeach; ?>
 </ul>
+
