@@ -13,7 +13,7 @@
         <div class="container users-box">
             <?=$this->section('content')?>
         </div>
-        <script src="app.js"></script>
+        <script src="app.js" defer></script>
         <?=$this->section('scripts')?>
     </body>
 </html>

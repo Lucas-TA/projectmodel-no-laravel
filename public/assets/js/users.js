@@ -1,12 +1,11 @@
-import http from './http';
-
-async function users() {
+import http from "./http";
+async function users()
+{
     try {
-        const { data } = await http.get('/user');
-        console.log(data);
+        const {data} = await http.get('/users');
+        console.log(data)
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
-
-export default users;
+export default  users;
