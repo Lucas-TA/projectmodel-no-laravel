@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
-    devtool: process.env.NODE_ENV === 'production' ? 'source-map' : '',
+    mode: process.env.NODE_ENV,
+    devtool: process.env.NODE_ENV === 'development' ? 'source-map' : '',
     entry: {
-        app: ['@babel/polyfill','./public/assets/js/app.js'],
+        app: ['@babel/polyfill', './public/assets/js/app.js'],
     },
     output: {
         path: path.resolve(__dirname, 'public'),
@@ -14,14 +14,9 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules\/(?!(alpinejs)\/).*/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'], // Usar o preset-env do Babel
-                    },
-                },
+                exclude: /node_modules/,
+                loader: 'babel-loader',
             },
         ],
-    }
-}
+    },
+};

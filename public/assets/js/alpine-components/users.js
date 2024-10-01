@@ -1,6 +1,6 @@
 import http from "../http";
 
-function users(){
+function users() {
     return {
         data: [],
         async loadUsers() {
@@ -13,4 +13,5 @@ function users(){
         },
     };
 }
+
 export default users;
